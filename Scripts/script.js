@@ -11,11 +11,12 @@ let playerSelection = prompt('Select rock, paper, or scissors!', '');
 //Computer makes selection of its own
 
 let computerSelection = computerPlay();
+console.log('Computer chooses ' + computerSelection);
 
 //Convert all selections to lowercase for comparison
 
 let playerSelectionLower = playerSelection.toLowerCase();
-console.log(playerSelectionLower);
+console.log('Player chooses ' + playerSelectionLower);
 
 //Computer compares both selections
 //Computer determines outcome
