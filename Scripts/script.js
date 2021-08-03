@@ -33,8 +33,15 @@ function playRound() {
 }
 
 function game() {
-   while (playRound() >= 0 && playRound() < 4) {
-       playRound();
+   while ((x >= 0 && x <= 5) && (y >= 0 && y <= 5)) {
+       if (x === 5) {   
+           alert('Congrats! You Have topped the computer in a best of five rock, paper, scissors match!');
+           break;
+    }  else if (y === 5) {
+           alert('Better luck next time, the computer has topped you in a best of five rock, paper, scissors match!');
+           break;
+    }
+        playRound();
    }
 } 
 
