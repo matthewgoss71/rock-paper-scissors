@@ -64,5 +64,3 @@ function runGame() {
 //Run the game
 
 runGame();
-
- 
