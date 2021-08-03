@@ -21,10 +21,14 @@ function playRound() {
 
     if (playerSelectionLower === computerSelection) {
         alert("It's a draw!");
-    }   else if ((playerSelectionLower === 'rock' &&  computerSelection === 'scissors') || (playerSelectionLower === 'paper' && computerSelection === 'rock') || (playerSelectionLower === 'scissors' && computerSelection === 'paper')) {
+    }   else if ((playerSelectionLower === 'rock' &&  computerSelection === 'scissors') || (playerSelectionLower === 
+            'paper' && computerSelection === 'rock') || (playerSelectionLower === 'scissors' && computerSelection === 
+            'paper')) {
         alert("Congratulations! You have beaten the computer!");
         console.log('Player ' + ++playerScore + ' ' + 'Computer ' + computerScore);
-    }   else if ((playerSelectionLower === 'rock' && computerSelection === 'paper') || (playerSelectionLower === 'paper' && computerSelection == 'scissors') || (playerSelectionLower === 'scissors' && computerSelection === 'rock')) {
+    }   else if ((playerSelectionLower === 'rock' && computerSelection === 'paper') || (playerSelectionLower === 
+            'paper' && computerSelection == 'scissors') || (playerSelectionLower === 'scissors' && computerSelection === 
+            'rock')) {
         alert("Better luck next time, the computer has defeated you!");
         console.log('Player ' + playerScore + ' ' + 'Computer ' + ++computerScore);
     }   else {
