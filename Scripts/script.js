@@ -13,39 +13,45 @@ let playerScore = 0;
 let computerScore = 0;
 
 //Single round gameplay function
+const buttons = document.querySelectorAll('button');
+let playerSelection = buttons.forEach((button) => {
+  let buttonID = button.addEventListener('click', () => {
+    playRound(button.id);
+  });
+});
 
-function playRound() {
-
-    let playerSelection = prompt('Select rock, paper, or scissors!', '');
-    let playerSelectionLower = playerSelection.toLowerCase();
+function playRound(playerSelection) {
+    
     let computerSelection = computerPlay();
+    console.log(computerSelection);
 
-    if (playerSelectionLower === computerSelection) {
+    if (playerSelection === computerSelection) {
         alert("It's a draw!");
-    }   else if ((playerSelectionLower === 'rock' &&  computerSelection ===
-                'scissors') || (playerSelectionLower === 'paper' && 
-                computerSelection === 'rock') || (playerSelectionLower === 
+    }   else if ((playerSelection === 'rock' &&  computerSelection ===
+                'scissors') || (playerSelection === 'paper' && 
+                computerSelection === 'rock') || (playerSelection === 
                 'scissors' && computerSelection === 'paper')) {
         alert("Congratulations! You have beaten the computer!");
         console.log('Player ' + ++playerScore + ' ' + 'Computer ' + 
                 computerScore);
-    }   else if ((playerSelectionLower === 'rock' && computerSelection === 
-                'paper') || (playerSelectionLower === 
+    }   else if ((playerSelection === 'rock' && computerSelection === 
+                'paper') || (playerSelection === 
                 'paper' && computerSelection == 'scissors') || 
-                (playerSelectionLower === 'scissors' && 
+                (playerSelection === 'scissors' && 
                 computerSelection === 
                 'rock')) {
         alert("Better luck next time, the computer has defeated you!");
         console.log('Player ' + playerScore + ' ' + 'Computer ' + 
                 ++computerScore);
-    }   else {
-        alert("Quitting already? Don't give up just yet!");
-    }
+    }   
 }
+
+playRound();
+
 
 //Best of five function
 
-function runGame() {
+/* function runGame() {
    while ((playerScore >= 0 && playerScore <= 5) && (computerScore >= 0 && 
             computerScore <= 5)) {
        if (playerScore === 5) {   
@@ -59,8 +65,8 @@ function runGame() {
     }
         playRound();
    }
-} 
+}  */
 
 //Run the game
 
-runGame();
+//runGame();
