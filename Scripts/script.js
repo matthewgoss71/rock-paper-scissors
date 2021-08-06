@@ -40,8 +40,8 @@ function playRound(playerSelection) {
                 'scissors' && computerSelection === 'paper')) {
           winLoseContent.textContent = 'You have beaten the computer!';
           winLose.appendChild(winLoseContent);
-          scoreContent.textContent = 'Player ' + ++playerScore + ' ' + 'Computer ' + 
-          computerScore;
+          scoreContent.textContent = 'Player ' + ++playerScore + ' ' + 
+              'Computer ' + computerScore;
           score.appendChild(scoreContent);
 
     }   else if ((playerSelection === 'rock' && computerSelection === 
@@ -52,10 +52,22 @@ function playRound(playerSelection) {
                 'rock')) {
           winLoseContent.textContent = 'You have lost to the computer!';
           winLose.appendChild(winLoseContent);
-          scoreContent.textContent = 'Player ' + playerScore + ' ' + 'Computer ' + 
-          ++computerScore;
+          scoreContent.textContent = 'Player ' + playerScore + ' ' + 
+              'Computer ' + ++computerScore;
           score.appendChild(scoreContent);
-    }   
+    }   if (playerScore === 5) {
+          playerScore = 0;
+          computerScore = 0;
+          winLoseContent.textContent = 'Congrats! You have bested the computer '
+              + 'in 5 rounds!';
+          winLoseContent.appendChild(winLoseContent);
+    }   if (computerScore === 5) {
+          playerScore = 0;
+          computerScore = 0;
+          winLoseContent.textContent = 'Better luck next time! You have lost to'
+              + ' the computer in 5 rounds!';
+          winLoseContent.appendChild(winLoseContent);
+    }
 }
 
 //c. Add a div for displaying results and change all of your console.logs into DOM methods.
