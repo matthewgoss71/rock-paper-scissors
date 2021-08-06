@@ -13,6 +13,7 @@ let playerScore = 0;
 let computerScore = 0;
 
 //Single round gameplay function
+
 const buttons = document.querySelectorAll('button');
 let playerSelection = buttons.forEach((button) => {
   let buttonID = button.addEventListener('click', () => {
@@ -70,10 +71,6 @@ function playRound(playerSelection) {
     }
 }
 
-//c. Add a div for displaying results and change all of your console.logs into DOM methods.
-//d. Display the running score, and announce a winner of the game once one player reaches 5 points.
-//e. You will likely have to refactor (rework/rewrite) your original code to make it work for this. That’s OK! Reworking old code is an important part of the programmer’s life.
-
 //Best of five function
 
 /* function runGame() {
@@ -92,6 +89,5 @@ function playRound(playerSelection) {
    }
 }  
  */
-//Run the game
 
 //runGame();
