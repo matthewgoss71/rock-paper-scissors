@@ -61,13 +61,13 @@ function playRound(playerSelection) {
           computerScore = 0;
           winLoseContent.textContent = 'Congrats! You have bested the computer '
               + 'in 5 rounds!';
-          winLoseContent.appendChild(winLoseContent);
+          winLose.appendChild(winLoseContent);
     }   if (computerScore === 5) {
           playerScore = 0;
           computerScore = 0;
           winLoseContent.textContent = 'Better luck next time! You have lost to'
               + ' the computer in 5 rounds!';
-          winLoseContent.appendChild(winLoseContent);
+          winLose.appendChild(winLoseContent);
     }
 }
 
