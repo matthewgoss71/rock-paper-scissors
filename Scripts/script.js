@@ -23,31 +23,44 @@ let playerSelection = buttons.forEach((button) => {
 function playRound(playerSelection) {
     
     let computerSelection = computerPlay();
-    console.log(computerSelection);
+    let winLose = document.querySelector('#win-lose');
+    let score = document.querySelector('#score');
+    const winLoseContent = document.querySelector('#win-lose-content')
+    const scoreContent = document.querySelector('#score-content')
 
     if (playerSelection === computerSelection) {
-        alert("It's a draw!");
+      winLoseContent.textContent = 'It\'s a draw!';
+      winLose.appendChild(winLoseContent);
+      scoreContent.textContent = 'Player ' + playerScore + ' ' + 'Computer ' + 
+      computerScore;
+      score.appendChild(scoreContent);
     }   else if ((playerSelection === 'rock' &&  computerSelection ===
                 'scissors') || (playerSelection === 'paper' && 
                 computerSelection === 'rock') || (playerSelection === 
                 'scissors' && computerSelection === 'paper')) {
-        alert("Congratulations! You have beaten the computer!");
-        console.log('Player ' + ++playerScore + ' ' + 'Computer ' + 
-                computerScore);
+          winLoseContent.textContent = 'You have beaten the computer!';
+          winLose.appendChild(winLoseContent);
+          scoreContent.textContent = 'Player ' + ++playerScore + ' ' + 'Computer ' + 
+          computerScore;
+          score.appendChild(scoreContent);
+
     }   else if ((playerSelection === 'rock' && computerSelection === 
                 'paper') || (playerSelection === 
                 'paper' && computerSelection == 'scissors') || 
                 (playerSelection === 'scissors' && 
                 computerSelection === 
                 'rock')) {
-        alert("Better luck next time, the computer has defeated you!");
-        console.log('Player ' + playerScore + ' ' + 'Computer ' + 
-                ++computerScore);
+          winLoseContent.textContent = 'You have lost to the computer!';
+          winLose.appendChild(winLoseContent);
+          scoreContent.textContent = 'Player ' + playerScore + ' ' + 'Computer ' + 
+          ++computerScore;
+          score.appendChild(scoreContent);
     }   
 }
 
-playRound();
-
+//c. Add a div for displaying results and change all of your console.logs into DOM methods.
+//d. Display the running score, and announce a winner of the game once one player reaches 5 points.
+//e. You will likely have to refactor (rework/rewrite) your original code to make it work for this. That’s OK! Reworking old code is an important part of the programmer’s life.
 
 //Best of five function
 
@@ -65,8 +78,8 @@ playRound();
     }
         playRound();
    }
-}  */
-
+}  
+ */
 //Run the game
 
 //runGame();
